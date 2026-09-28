@@ -59,6 +59,8 @@ dependencies {
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
 
+    implementation(libs.sqlcipher.android)
+
     implementation(libs.coil)
 
     testImplementation(libs.junit)

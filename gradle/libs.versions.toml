@@ -19,6 +19,7 @@ room = "2.8.5"
 navigation = "2.8.4"
 coil = "2.7.0"
 leakcanary = "2.14"
+sqlcipher = "4.5.4"
 recyclerview = "1.3.2"
 swiperefreshlayout = "1.1.0"
 fragmentKtx = "1.8.5"
@@ -63,6 +64,8 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 
 leakcanary-android = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
+
+sqlcipher-android = { group = "net.zetetic", name = "android-database-sqlcipher", version.ref = "sqlcipher" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
