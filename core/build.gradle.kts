@@ -20,14 +20,6 @@ android {
         buildConfigField("String", "TMDB_IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/w500/\"")
     }
 
-    buildTypes {
-        release {
-            optimization {
-                enable = false
-            }
-        }
-    }
-
     buildFeatures {
         buildConfig = true
         viewBinding = true
