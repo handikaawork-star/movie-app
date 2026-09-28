@@ -16,6 +16,8 @@ class MoviesPagerFragment : Fragment(R.layout.fragment_movies_pager) {
     private var _binding: FragmentMoviesPagerBinding? = null
     private val binding get() = _binding!!
 
+    private var tabLayoutMediator: TabLayoutMediator? = null
+
     private val categories = listOf(
         MovieCategory.NOW_PLAYING,
         MovieCategory.POPULAR,
@@ -49,12 +51,15 @@ class MoviesPagerFragment : Fragment(R.layout.fragment_movies_pager) {
                 MovieListFragment.newInstance(categories[position])
         }
 
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+        tabLayoutMediator = TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = getString(titles[position])
-        }.attach()
+        }.also { it.attach() }
     }
 
     override fun onDestroyView() {
+        tabLayoutMediator?.detach()
+        tabLayoutMediator = null
+        binding.viewPager.adapter = null
         super.onDestroyView()
         _binding = null
     }

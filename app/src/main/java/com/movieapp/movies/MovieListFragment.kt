@@ -83,6 +83,7 @@ class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
     }
 
     override fun onDestroyView() {
+        binding.rvMovies.adapter = null
         super.onDestroyView()
         _binding = null
     }

@@ -92,6 +92,8 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
     }
 
     override fun onDestroyView() {
+        binding.searchView.setOnQueryTextListener(null)
+        binding.rvSearchResults.adapter = null
         super.onDestroyView()
         _binding = null
     }
