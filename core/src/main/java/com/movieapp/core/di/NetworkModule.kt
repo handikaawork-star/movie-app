@@ -11,21 +11,12 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-/**
- * Pins the TMDB API host to its known public keys (leaf, intermediate and root CA),
- * blocking connections that present any other certificate (e.g. a MITM proxy with a
- * locally-trusted CA). Pinning all three tiers keeps the app working across routine
- * leaf-certificate renewals while still rejecting an untrusted issuer.
- *
- * Pins verified via:
- * `openssl s_client -connect api.themoviedb.org:443 -servername api.themoviedb.org`
- */
 private val tmdbCertificatePinner = CertificatePinner.Builder()
     .add(
         "api.themoviedb.org",
-        "sha256/QfyoR20v8hyYX7L+ikLzM/euPGSDl67gFFcor/sROMs=", // leaf: *.themoviedb.org
-        "sha256/G9LNNAql897egYsabashkzUCTEJkWBzgoEtk8X/678c=", // intermediate: Amazon RSA 2048 M04
-        "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI="  // root: Amazon Root CA 1
+        "sha256/QfyoR20v8hyYX7L+ikLzM/euPGSDl67gFFcor/sROMs=",
+        "sha256/G9LNNAql897egYsabashkzUCTEJkWBzgoEtk8X/678c=",
+        "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI="
     )
     .build()
 
