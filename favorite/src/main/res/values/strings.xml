@@ -1,0 +1,4 @@
+<resources>
+    <string name="title_favorite" translatable="false">Favorite</string>
+    <string name="empty_favorite">Belum ada film favorite</string>
+</resources>

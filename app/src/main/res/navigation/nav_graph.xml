@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moviesPagerFragment">
+
+    <fragment
+        android:id="@+id/moviesPagerFragment"
+        android:name="com.movieapp.movies.MoviesPagerFragment"
+        android:label="@string/menu_movies" />
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.movieapp.detail.MovieDetailFragment"
+        android:label="@string/label_overview">
+        <argument android:name="movieId" app:argType="integer" />
+    </fragment>
+
+    <include-dynamic
+        android:id="@+id/favoriteModule"
+        app:moduleName="favorite"
+        app:graphResName="favorite_nav_graph" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.movieapp.search.SearchFragment"
+        android:label="@string/title_search" />
+
+    <action
+        android:id="@+id/action_global_to_movieDetail"
+        app:destination="@id/movieDetailFragment" />
+
+</navigation>

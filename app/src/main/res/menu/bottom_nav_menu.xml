@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/moviesPagerFragment"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="@string/menu_movies" />
+    <item
+        android:id="@+id/favoriteModule"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="@string/menu_favorite" />
+</menu>
